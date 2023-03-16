@@ -1,15 +1,13 @@
 #include <stdio.h>
 
-/*
- * this code will print a string
+/**
+ * main - Entry point
+ * Return: Always return 0 (Success)
  */
 
 int main(void)
 {
+puts("\"Programming is like building a multilingual puzzle");
+return (0);
+}
 
-	char str[] = "\"Programming is like building a multilingual puzzle";
-
-	puts(str);
-
-	return (0);
-}	
