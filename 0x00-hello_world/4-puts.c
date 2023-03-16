@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+/*
+ * this code will print a string
+ */
+
 int main(void)
 {
 
