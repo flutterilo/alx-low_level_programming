@@ -6,6 +6,8 @@
 /* betty style doc for function main goes there */
 /**
  * main - recongize if the variable positive or negative or null
+ * Description: - description of task
+ * Return: 1
  */
 int main(void)
 {
