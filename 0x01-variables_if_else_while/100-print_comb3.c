@@ -14,10 +14,11 @@ int main(void)
 {
 	int i;
 	int digit_two = 1;
+	int j;
 
 	for (i = 0; i <= 8; ++i)
 	{
-		for (int j = digit_two; j <= 9; ++j)
+		for (j = digit_two; j <= 9; ++j)
 		{
 			putchar(i + '0');
 			putchar(j + '0');
