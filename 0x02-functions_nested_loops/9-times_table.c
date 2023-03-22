@@ -15,14 +15,12 @@ void print_number(int num)
 		_putchar((num / 10) + '0');
 		_putchar((num % 10) + '0');
 		_putchar(',');
-		_putchar(' ');
 	} else
 	{
 		_putchar(' ');
 		_putchar(' ');
 		_putchar((num % 10) + '0');
 		_putchar(',');
-		_putchar(' ');
 	}
 }
 
