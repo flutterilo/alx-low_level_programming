@@ -1,4 +1,3 @@
-#include "main.h"
 #include <stdio.h>
 
 /**
@@ -8,17 +7,26 @@
 
 int main(void)
 {
-	int a, b, result1, result2, total;
+	int a, result;
 
 	for (a = 0; a < 1024; a += 3)
 	{
-		result1 += a;
+		result += a;
 	}
-	for (b = 0; b < 1024; b += 5)
+	for (a = 0; a < 1024; a += 5)
+	{
+		result = result + a;
+	}
+	printf("%d\n", result);
+	/*
+	printf("%d\n", result1);
+	for (b = 0; b < 10; b += 5)
 	{
 		result2 += b;
 	}
 	total = result1 + result2;
-	printf("%d", total);
+	printf("%d\n", result1);
+	printf("%d\n", total);
+	*/
 	return (0);
 }
