@@ -44,7 +44,7 @@ void print_times_table(int n)
 {
 	int first, tmp, inside;
 
-	if (n >= 0 && n <= 15)
+	if (n > 0 && n <= 15)
 	{
 		tmp = 0;
 		for (first = 0; first <= n; first++)
@@ -78,6 +78,9 @@ void print_times_table(int n)
 			tmp = 0;
 			_putchar('\n');
 		}
+	} else
+	{
+		_putchar('0');
 	}
 
 }
