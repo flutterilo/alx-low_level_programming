@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * sum_multiples - printing sum of multiples 3 and 5
