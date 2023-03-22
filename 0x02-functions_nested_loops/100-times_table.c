@@ -33,6 +33,34 @@ void print_number(int num)
 	}
 }
 
+/**
+ * print_last_number - print time table
+ * @num: parameter n.
+ * Return: return nothing
+ */
+
+void print_last_number(int num)
+{
+	if (num > 9 && num < 100)
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar((num / 10) + '0');
+		_putchar((num % 10) + '0');
+	} else if (num >= 100)
+	{
+		_putchar(' ');
+		_putchar((num / 100) + '0');
+		_putchar(((num / 10) % 10) + '0');
+		_putchar((num % 10) + '0');
+	} else
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar(' ');
+		_putchar((num % 10) + '0');
+	}
+}
 
 /**
  * print_times_table - print time table
@@ -55,26 +83,7 @@ void print_times_table(int n)
 			{
 				print_number(tmp += first);
 			}
-			tmp += first;
-			if (tmp > 9 && tmp < 100)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((tmp / 10) + '0');
-				_putchar((tmp % 10) + '0');
-			} else if (tmp >= 100)
-			{
-				_putchar(' ');
-				_putchar((tmp / 100) + '0');
-				_putchar(((tmp / 10) % 10) + '0');
-				_putchar((tmp % 10) + '0');
-			} else
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((tmp % 10) + '0');
-			}
+			print_last_number(tmp += first);
 			tmp = 0;
 			_putchar('\n');
 		}
@@ -83,5 +92,4 @@ void print_times_table(int n)
 		_putchar('0');
 		_putchar('\n');
 	}
-
 }
