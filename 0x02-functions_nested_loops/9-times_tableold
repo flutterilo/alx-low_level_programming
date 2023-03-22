@@ -1,0 +1,85 @@
+#include "main.h"
+
+/**
+ * times_table - print time table
+ * print_number - print number
+ * @num: parameter num.
+ * Return: return nothing
+ */
+
+void print_number(int num)
+{
+	if (num > 9)
+	{
+		_putchar(' ');
+		_putchar((num / 10) + '0');
+		_putchar((num % 10) + '0');
+		_putchar(',');
+		_putchar(' ');
+	} else
+	{
+		_putchar(' ');
+		_putchar(' ');
+		_putchar((num % 10) + '0');
+		_putchar(',');
+		_putchar(' ');
+	}
+}
+
+void times_table(void)
+{
+	int first, second, thirt, fourth, fifth, sixth, seventh, eight, nineth;
+
+	for (first = 0; first <= 9; first++)
+	{
+		for (second = 0; second <= 18; second += 2)
+		{
+			for (thirt = 0; thirt <= 27; thirt += 3)
+			{
+				for (fourth = 0; fourth <= 36; fourth += 4)
+				{
+					for (fifth = 0; fifth <= 45; fifth += 5)
+					{
+						for (sixth = 0; sixth <= 54; sixth += 6)
+						{
+							for (seventh = 0; seventh <= 63; seventh += 7)
+							{
+								for (eight = 0; eight <= 72; eight += 8)
+								{
+									for (nineth = 0; nineth <= 81; nineth += 9)
+									{
+										_putchar('0');
+										_putchar(',');
+										_putchar(' ');
+										_putchar(' ');
+										_putchar(first + '0');
+										_putchar(',');
+										print_number(second);
+										print_number(thirt);
+										print_number(fourth);
+										print_number(fifth);
+										print_number(sixth);
+										print_number(seventh);
+										print_number(eight);
+										if (second > 9)
+										{
+											_putchar(' ');
+											_putchar((nineth / 10) + '0');
+											_putchar((nineth % 10) + '0');
+										} else
+										{
+											_putchar(' ');
+											_putchar(' ');
+											_putchar((nineth % 10) + '0');
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+}
