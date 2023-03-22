@@ -7,26 +7,15 @@
 
 int main(void)
 {
-	int a, result;
+	int a, result = 0;
 
-	for (a = 0; a < 1024; a += 3)
+	for (a = 0; a < 1024; a++)
 	{
-		result += a;
-	}
-	for (a = 0; a < 1024; a += 5)
-	{
-		result = result + a;
+		if((a % 3) == 0 || (a % 5) == 0)
+		{
+			result += a;
+		}
 	}
 	printf("%d\n", result);
-	/*
-	printf("%d\n", result1);
-	for (b = 0; b < 10; b += 5)
-	{
-		result2 += b;
-	}
-	total = result1 + result2;
-	printf("%d\n", result1);
-	printf("%d\n", total);
-	*/
 	return (0);
 }
