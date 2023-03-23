@@ -11,7 +11,7 @@ void print_leap_day(int m, int d);
 
 void print_leap_day(int month, int day)
 {
-	if (month >= 2 && day >= 60)
+	if (month > 2 && day >= 60)
 	{
 		day++;
 	}
