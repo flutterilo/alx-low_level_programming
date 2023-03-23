@@ -6,6 +6,7 @@
  * @month: month parameter
  * @day: day parameter
  */
+void print_leap_day(int m, int d);
 
 void print_leap_day(int month, int day)
 {
