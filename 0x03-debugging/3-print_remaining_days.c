@@ -3,11 +3,11 @@
 
 /**
  * print_leap_day - printing leap day
- * @m: month parameter
- * @d: day parameter
+ * @month: month parameter
+ * @day: day parameter
  */
 
-void print_leap_day(int m, int d)
+void print_leap_day(int month, int day)
 {
 	if (month >= 2 && day >= 60)
 	{
