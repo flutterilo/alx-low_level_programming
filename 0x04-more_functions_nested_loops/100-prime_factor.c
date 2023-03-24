@@ -16,7 +16,7 @@ int main(void)
 			continue;
 		}
 
-		for (d = 3; div < (prime / 2); div += 2)
+		for (d = 3; d < (prime / 2); d += 2)
 		{
 			if ((prime % d) == 0)
 				prime /= d;
