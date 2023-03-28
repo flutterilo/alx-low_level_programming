@@ -1,34 +1,26 @@
 #include "main.h"
+#include "string.h"
 
 /**
-  * rev_string - reverse string
-  * @s: paramter s
-  *
-  * Return: void
-  */
+* rev_string - printing in reverse way of string
+* @s: parameter of string s
+*/
+
 void rev_string(char *s)
 {
-	int i, c, k;
-	char *a, aux;
+	int length;
+	char *ptr;
+	char tems[10];
 
-	a = s;
-
-	while (s[c] != '\0')
+	for (length = 0; s[length] != '\0'; ++length)
 	{
-		c++;
+		tems[length] = s[length];
 	}
-
-	for (k = 1; k < c; k++)
+	ptr = s;
+	while (length--)
 	{
-		a++;
-	}
-
-	for (i = 0; i < (c / 2); i++)
-	{
-		aux = s[i];
-		s[i] = *a;
-		*a = aux;
-		a--;
+		*ptr = tems[length];
+		ptr++;
 	}
 }
 
