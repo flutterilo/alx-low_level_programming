@@ -15,7 +15,7 @@ char *rot13(char *n)
 	i = 0;
 	while (n[i] != '\0')
 	{
-		for(j = 0; j < 52; j++)
+		for (j = 0; j < 52; j++)
 		{
 			if (n[i] == inp[j])
 			{
