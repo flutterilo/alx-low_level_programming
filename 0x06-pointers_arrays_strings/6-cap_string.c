@@ -11,7 +11,7 @@ char *cap_string(char *n)
 	i = 0;
 	while (n[i] != '\0')
 	{
-		if(n[0] >= 'a' && n[0] <= 'z')
+		if (n[0] >= 'a' && n[0] <= 'z')
 		{
 			n[0] = n[0] - 32;
 		}
