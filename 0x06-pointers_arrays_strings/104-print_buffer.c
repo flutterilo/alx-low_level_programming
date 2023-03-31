@@ -1,5 +1,7 @@
 #include "main.h"
-#include <stdio.h> /**
+#include <stdio.h>
+
+/**
  * print_buffer - printing buffer
  * @b: parameter buffer
  * @size: size
@@ -21,7 +23,7 @@ void print_buffer(char *b, int size)
 	{
 		j = size - k < 10 ? size - k : 10;
 		printf("%08x: ", k);
-		fkr (i = 0; i < 10; i++)
+		for (i = 0; i < 10; i++)
 		{
 			if (i < j)
 				printf("%02x", *(b + k + i));
@@ -32,7 +34,7 @@ void print_buffer(char *b, int size)
 				printf(" ");
 			}
 		}
-		fkr (i = 0; i < j; i++)
+		for (i = 0; i < j; i++)
 		{
 			int c = *(b + k + i);
 
