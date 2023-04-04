@@ -10,7 +10,7 @@
 void print_diagsums(int *a, int size)
 {
 	int i, diag1 = 0, diag2 = 0;
-	int total_cell = (size * size) - 1;
+	/*int total_cell = (size * size) - 1;*/
 
 	for (i = 0; i < size; i++)
 	{
@@ -18,7 +18,7 @@ void print_diagsums(int *a, int size)
 	}
 	for (i = size - 1; i >= 0; i--)
 	{
-		diag2 += a[i * size + (size - y - 1)]
+		diag2 += a[i * size + (size - i - 1)];
 	}
 
 	/*
