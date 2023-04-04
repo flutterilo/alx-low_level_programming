@@ -15,13 +15,13 @@ void print_diagsums(int *a, int size)
 	while (total_cell)
 	{
 		diag1 += a[total_cell];
-		total_cell -= size +1;
+		total_cell -= size + 1;
 	}
-	total_cell = (size * size) - 1 - (size -1);
+	total_cell = (size * size) - 1 - (size - 1);
 	while (total_cell)
 	{
 		diag2 += a[total_cell];
-		total_cell -= size -1;
+		total_cell -= size - 1;
 	}
 	printf("%d, %d\n", diag1, diag2);
 }
