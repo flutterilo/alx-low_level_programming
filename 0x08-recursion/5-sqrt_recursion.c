@@ -9,9 +9,10 @@
 int _sqrt_recursion(int n)
 {
 	int a = 0;
+
 	if (n < 0)
-		return -1;
-	return _check_number(a, n);
+		return (-1);
+	return (_check_number(a, n));
 
 }
 
@@ -28,5 +29,5 @@ int _check_number(int a, int n)
 		return (-1);
 	if ((a * a) == n)
 		return (a);
-	return _check_number(a + 1, n);
+	return (_check_number(a + 1, n));
 }
