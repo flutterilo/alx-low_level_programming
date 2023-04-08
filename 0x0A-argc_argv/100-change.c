@@ -10,44 +10,28 @@
 
 int main(int argc, __attribute__((unused)) char *argv[])
 {
-	int i = 0, coin = 0;
+	int i = 0, result = 0, num = atoi(argv[1]);
+	int coin[] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
 	{
 		puts("Error");
 		return (1);
 	}
-	if (atoi(argv[1]) < 0)
+	if (num < 0)
 	{
 		puts("0");
-		return (1);
+		return (0);
 	}
-
-	while ((i + 25) <= atoi(argv[1]))
+	for (i = 0; i < 5 && num > 0; i++)
 	{
-		i += 25;
-		coin++;
+		while(num >= coin[i])
+		{
+			result++;
+			num -= coin[i];
+		}
 	}
-	while ((i + 10) <= atoi(argv[1]))
-	{
-		i += 10;
-		coin++;
-	}
-	while ((i + 5) <= atoi(argv[1]))
-	{
-		i += 5;
-		coin++;
-	}
-	while ((i + 2) <= atoi(argv[1]))
-	{
-		i += 2;
-		coin++;
-	}
-	while ((i + 1) <= atoi(argv[1]))
-	{
-		i += 1;
-		coin++;
-	}
-	printf("%d\n", coin);
+	printf("%d\n", result);
 	return (0);
 }
+
