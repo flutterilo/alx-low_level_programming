@@ -15,15 +15,15 @@ int main(int argc, __attribute__((unused)) char *argv[])
 
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("Error\n");
 		return (1);
 	}
 	if (num < 0)
 	{
-		puts("0");
+		printf("0\n");
 		return (0);
 	}
-	for (i = 0; i < 5 && num > 0; i++)
+	for (i = 0; i < 5 && num >= 0; i++)
 	{
 		while (num >= coin[i])
 		{
