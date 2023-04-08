@@ -17,6 +17,11 @@ int main(int argc, __attribute__((unused)) char *argv[])
 		puts("Error");
 		return (1);
 	}
+	if (atoi(argv[1]) < 0)
+	{
+		puts("0");
+		return (0);
+	}
 
 	while ((i + 25) <= atoi(argv[1]))
 	{
