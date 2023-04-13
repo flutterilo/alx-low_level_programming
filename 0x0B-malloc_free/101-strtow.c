@@ -37,7 +37,7 @@ int calculatewords(char *str)
 
 char **strtow(char *str)
 {
-	int i = 0, k = 0, r = 0, z = 0, length = 0;
+	int length = 0;
 	char **ptr;
 
 	length = calculatewords(str);
@@ -46,7 +46,21 @@ char **strtow(char *str)
 	ptr = (char **)malloc(sizeof(char *) * length + 1 + length);
 	if (ptr == NULL)
 		return (NULL);
-	i = 0;
+	allocate_assign(str, ptr);
+	return (ptr);
+}
+
+/**
+* allocate_assign - allocate and assign
+* @str: string
+* @ptr: pointer
+* Return: retunn pointer
+*/
+
+char **allocate_assign(char *str, char **ptr)
+{
+	int i = 0, k = 0, r = 0, z = 0;
+
 	while (str[i] != '\0')
 	{
 		if (str[i] != ' ')

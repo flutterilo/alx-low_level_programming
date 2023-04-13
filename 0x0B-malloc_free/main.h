@@ -12,5 +12,6 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 char **strtow(char *str);
 int calculatewords(char *str);
+char **allocate_assign(char *str, char **ptr);
 
 #endif
