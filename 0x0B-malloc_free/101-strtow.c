@@ -15,7 +15,11 @@ int calculatewords(char *str)
 		if (str[i] != ' ')
 		{
 			while (str[i] != ' ')
+			{
+				if (str[i] == '\0')
+					break;
 				i++;
+			}
 			length += 1;
 		}
 		if (str[i] == '\0')
@@ -48,6 +52,8 @@ char **strtow(char *str)
 			k = 0;
 			while (str[i] != ' ')
 			{
+				if (str[i] == '\0')
+					break;
 				k++;
 				i++;
 			}
