@@ -66,7 +66,7 @@ char **strtow(char *str)
 				return (NULL);
 			}
 			z = 0;
-			for (; k >= 0; k--)
+			for (; k > 0; k--)
 			{
 				ptr[r][z] = str[i - k];
 				z++;
