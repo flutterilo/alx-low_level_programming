@@ -41,6 +41,8 @@ char **strtow(char *str)
 	char **ptr;
 
 	length = calculatewords(str);
+	if (length == 0)
+		return (NULL);
 	ptr = (char **)malloc(sizeof(char *) * length + 1);
 	if (ptr == NULL)
 		return (NULL);
