@@ -43,7 +43,7 @@ char **strtow(char *str)
 	length = calculatewords(str);
 	if (length == 0)
 		return (NULL);
-	ptr = (char **)malloc(sizeof(char *) * length + 1);
+	ptr = (char **)malloc(sizeof(char *) * length + 1 + length);
 	if (ptr == NULL)
 		return (NULL);
 	i = 0;
@@ -59,7 +59,7 @@ char **strtow(char *str)
 				k++;
 				i++;
 			}
-			ptr[r] = malloc(sizeof(char) * k + 1 + length);
+			ptr[r] = malloc(sizeof(char) * k + 1);
 			if (ptr[r] == NULL)
 			{
 				while (r >= 0)
