@@ -59,7 +59,7 @@ char **strtow(char *str)
 				k++;
 				i++;
 			}
-			ptr[r] = malloc(sizeof(char) * k + 1);
+			ptr[r] = malloc(sizeof(char) * k + 1 + length);
 			if (ptr[r] == NULL)
 			{
 				while (r >= 0)
