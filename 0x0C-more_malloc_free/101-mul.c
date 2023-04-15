@@ -2,6 +2,32 @@
 #include <stdlib.h>
 #include <string.h>
 
+
+/**
+* _calloc - allocate memory for an array
+* @nmemb: number of element
+* @size: size of type
+* Return: return point to array
+*/
+
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *ptr, b = 0;
+	unsigned int i = 0;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+	ptr = malloc(size * nmemb);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < (size * nmemb))
+	{
+		ptr[i] = b;
+		i++;
+	}
+	return (ptr);
+}
+
 /**
 * multiplie_print - multiple and print
 * @len1: len1
@@ -50,7 +76,7 @@ int main(int argc, char *argv[])
 	}
 	len1 = strlen(argv[1]);
 	len2 = strlen(argv[2]);
-	answer = calloc(sizeof(int), len1 + len2);
+	answer = _calloc(sizeof(int), (len1 + len2 + 3));
 	s1 = malloc(sizeof(int) * len1 + 1);
 	s2 = malloc(sizeof(int) * len2 + 1);
 	if (answer == NULL || s1 == NULL || s2 == NULL)
