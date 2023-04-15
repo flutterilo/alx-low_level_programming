@@ -2,6 +2,47 @@
 #include <stdlib.h>
 #include <string.h>
 
+/**
+ * _atoi - converts a string to an integer
+ * @s: string to be converted
+ * Return: the int converted from the string
+ */
+int _atoi(char *s)
+{
+	int i, d, n, len, f, digit;
+
+	i = 0;
+	d = 0;
+	n = 0;
+	len = 0;
+	f = 0;
+	digit = 0;
+
+	while (s[len] != '\0')
+		len++;
+	while (i < len && f == 0)
+	{
+		if (s[i] == '-')
+			++d;
+
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			digit = s[i] - '0';
+			if (d % 2)
+				digit = -digit;
+			n = n * 10 + digit;
+			f = 1;
+			if (s[i + 1] < '0' || s[i + 1] > '9')
+				break;
+			f = 0;
+		}
+		i++;
+	}
+	if (f == 0)
+		return (0);
+
+	return (n);
+}
 
 /**
 * _calloc - allocate memory for an array
@@ -76,20 +117,34 @@ int main(int argc, char *argv[])
 	}
 	len1 = strlen(argv[1]);
 	len2 = strlen(argv[2]);
-	answer = _calloc(sizeof(int), (len1 + len2 + 3));
-	s1 = malloc(sizeof(int) * len1 + 1);
-	s2 = malloc(sizeof(int) * len2 + 1);
+	answer = _calloc(sizeof(int), (len1 + len2 + 10));
+	s1 = malloc(sizeof(int) * len1 + 20);
+	s2 = malloc(sizeof(int) * len2 + 20);
 	if (answer == NULL || s1 == NULL || s2 == NULL)
 	{
 		printf("Error\n");
 		exit(98);
 	}
 	for (i = len1 - 1; i >= 0; i--)
+	{
+		if (!(argv[1][i] >= '0' && argv[1][i] <= '9'))
+		{
+			printf("Error\n");
+			exit(98);
+		}
 		s1[j++] = argv[1][i] - 48;
+	}
 
 	j = 0;
 	for (i = len2 - 1; i >= 0; i--)
+	{
+		if (!(argv[2][i] >= '0' && argv[2][i] <= '9'))
+		{
+			printf("Error\n");
+			exit(98);
+		}
 		s2[j++] = argv[2][i] - '0';
+	}
 
 	for (i = 0; i < len2; i++)
 	{
