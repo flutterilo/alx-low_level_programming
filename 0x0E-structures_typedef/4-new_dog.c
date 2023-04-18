@@ -37,11 +37,11 @@ char *_strcpy(char *dest, char *src)
 }
 
 /**
-* dog_t - initialize dog strucutre
-* @d: pointer to structure dog
+* new_dog - create new dog
 * @name: name parameter
 * @age: age parameter
 * @owner: owner parameter
+* Return: return pointer to new dog
 */
 
 dog_t *new_dog(char *name, float age, char *owner)
@@ -53,7 +53,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	len2 = _strlen(owner);
 	dog = malloc(sizeof(dog_t));
 	if (dog == NULL)
-		return NULL;
+		return (NULL);
 	dog->name = malloc(sizeof(char) * len1 + 1);
 	if (dog->name == NULL)
 	{
