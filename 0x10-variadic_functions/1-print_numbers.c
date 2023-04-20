@@ -41,8 +41,11 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 			continue;
 		}
 		char_num_print(va_arg(nums, int));
-		while (separator[j] && separator != NULL)
-			_putchar(separator[j++]);
+		if (separator != NULL)
+		{
+			while (separator[j])
+				_putchar(separator[j++]);
+		}
 
 	}
 	_putchar('\n');
