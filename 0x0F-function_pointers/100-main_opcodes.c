@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 		exit(2);
 	}
 
-	while(num--)
+	while (num--)
 	{
 		printf("%02hhx%c", *arr++, num ? ' ' : '\n');
 	}
