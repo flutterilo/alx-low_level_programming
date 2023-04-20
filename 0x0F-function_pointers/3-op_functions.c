@@ -37,7 +37,7 @@ int op_mul(int a, int b)
 }
 
 /**
-* op_dev - operation devision
+* op_div - operation devision
 * @a: parameter a
 * @b: parameter b
 * Return: return result

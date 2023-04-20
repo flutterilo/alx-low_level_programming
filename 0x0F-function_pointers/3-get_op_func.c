@@ -1,5 +1,11 @@
 #include "3-calc.h"
 
+/**
+* get_op_func - select correct function
+* @s: string parameter
+* Return: return result
+*/
+
 int (*get_op_func(char *s))(int, int)
 {
 	op_t ops[] = {
@@ -15,6 +21,5 @@ int (*get_op_func(char *s))(int, int)
 	i = 0;
 	while (ops[i].op != NULL && *(ops[i].op) != *s)
 		i++;
-	
 	return (ops[i].f);
 }
