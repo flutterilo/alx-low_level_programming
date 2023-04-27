@@ -15,7 +15,7 @@ typedef unsigned long size_t;
 
 typedef struct node
 {
-	const char *str;
+	char *str;
 	int len;
 	struct node *next;
 } list_t;
