@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 typedef unsigned long size_t;
 
@@ -16,7 +17,7 @@ typedef unsigned long size_t;
 typedef struct node
 {
 	char *str;
-	int len;
+	unsigned int len;
 	struct node *next;
 } list_t;
 
