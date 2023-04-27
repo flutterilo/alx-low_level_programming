@@ -2,6 +2,7 @@
 #define LIST_H
 
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef unsigned long size_t;
 
@@ -14,7 +15,7 @@ typedef unsigned long size_t;
 
 typedef struct node
 {
-	char *str;
+	const char *str;
 	int len;
 	struct node *next;
 } list_t;
@@ -22,6 +23,7 @@ typedef struct node
 int _putchar(char c);
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
 
 
 #endif
