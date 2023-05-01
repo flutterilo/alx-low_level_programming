@@ -11,11 +11,16 @@
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
 	listint_t *new_node, *index_node, *temp;
-	unsigned int i = 0, length;
+	unsigned int i = 0, length = 0;
 
 	if (*head == NULL || head == NULL)
 		return (NULL);
-	length = listint_len(*head);
+	index_node = *head;
+	while (index_node != NULL)
+	{
+		index_node = index_node->next;
+		length += 1;
+	}
 	if (idx > length - 1)
 		return (NULL);
 	index_node = *head;
