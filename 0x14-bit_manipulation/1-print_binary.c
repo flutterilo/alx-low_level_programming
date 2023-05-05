@@ -21,7 +21,7 @@ void print_binary(unsigned long int n)
 	check >>= 1;
 	while (check)
 	{
-		if (check & n)
+		if (n & check)
 			_putchar('1');
 		else
 			_putchar('0');
