@@ -9,16 +9,12 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int check = 1;
 
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 	while (check <= n)
 	{
 		check <<= 1;
 	}
-	check >>= 1;
+	if (n > 0)
+		check >>= 1;
 	while (check)
 	{
 		if (n & check)
