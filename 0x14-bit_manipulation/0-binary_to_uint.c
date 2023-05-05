@@ -8,14 +8,14 @@
 
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int sum = 0;
+	unsigned int sum = 0, i = 0;
 
 	if (!b)
 		return (0);
-	while (b)
+	while (b[i])
 	{
-		sum += sum << 1 + b[i] - '0';
-		b >>= 1;
+		sum = (sum << 1) + (b[i] - '0');
+		i++;
 	}
 	return (sum);
 }
