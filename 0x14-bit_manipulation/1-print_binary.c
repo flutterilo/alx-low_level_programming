@@ -7,20 +7,7 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned long int check = 1;
-
-	while (check <= n)
-	{
-		check <<= 1;
-	}
-	if (n > 0)
-		check >>= 1;
-	while (check)
-	{
-		if (n & check)
-			_putchar('1');
-		else
-			_putchar('0');
-		check >>= 1;
-	}
+	if (n > 1)
+		print_binary(n >> 1);
+	_putchar((n & 1) + '0');
 }
