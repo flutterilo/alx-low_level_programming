@@ -30,10 +30,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-	check_w = write(STDOUT_FILENO, str, letters);
+	check_w = write(STDOUT_FILENO, str, check_r);
 	free(str);
 	close(fd);
-	if (check_w == -1)
+	if (check_w == -1 || check_r != check_w)
 	{
 		return (0);
 	}
