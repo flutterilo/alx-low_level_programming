@@ -9,21 +9,32 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *fp;
-	ssize_t num = 0;
-	size_t inc = 0;
+	ssize_t fd, i = 0, num = 0;
+	char *str;
+	int checklen;
 
-	if (!filename)
-		return (0);
-	fp = fopen(filename, "r");
-	if (fp == NULL)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (-1);
+	str = malloc(sizeof(char) * letters);
+	if (str == NULL)
 	{
-		return (0);
+		close(fd);
+		return (-1);
 	}
-	while (!feof(fp) && inc < letters)
+	checklen = read(fd, str, letters);
+	if (checklen == -1)
 	{
-		num += _putchar(fgetc(fp));
-		inc++;
+		free(str);
+		return (-1);
 	}
+
+	while (str[i])
+	{
+		num += _putchar(str[i]);
+		i++;
+	}
+	if (close(fd) < 0)
+		return (-1);
 	return (num);
 }
