@@ -9,9 +9,8 @@
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd, i = 0, num = 0;
+	ssize_t fd, check_r, check_w;
 	char *str;
-	int checklen;
 
 	if (!filename)
 		return (-1);
@@ -24,20 +23,18 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (-1);
 	}
-	checklen = read(fd, str, letters);
-	if (checklen == -1)
+	check_r = read(fd, str, letters);
+	if (check_r == -1)
 	{
 		free(str);
+		close(fd);
 		return (-1);
 	}
-
-	while (str[i])
-	{
-		num += _putchar(str[i]);
-		i++;
-	}
+	check_w = write(STDOUT_FILENO, str, letters);
 	free(str);
+	if (check_w == -1)
+		return (-1);
 	if (close(fd) < 0)
 		return (-1);
-	return (num);
+	return (check_r);
 }
