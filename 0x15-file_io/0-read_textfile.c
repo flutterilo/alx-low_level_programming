@@ -13,6 +13,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *str;
 	int checklen;
 
+	if (!filename)
+		return (-1);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 		return (-1);
@@ -34,6 +36,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		num += _putchar(str[i]);
 		i++;
 	}
+	free(str);
 	if (close(fd) < 0)
 		return (-1);
 	return (num);
