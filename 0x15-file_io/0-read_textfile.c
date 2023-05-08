@@ -11,6 +11,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	FILE *fp;
 	ssize_t num = 0;
+	size_t inc = 0;
 
 	if (!filename)
 		return (0);
@@ -19,10 +20,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		return (0);
 	}
-	while (!feof(fp) && (size_t)num < letters)
+	while (!feof(fp) && inc < letters)
 	{
-		num++;
-		_putchar(fgetc(fp));
+		num += _putchar(fgetc(fp));
+		inc++;
 	}
 	return (num);
 }
