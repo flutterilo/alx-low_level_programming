@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 	fd_r = open(argv[1], O_RDONLY);
 	if (fd_r == -1)
 		fd_r_error(argv[1]);
-	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0600);
+	fd_w = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (fd_w == -1)
 		fd_w_error(argv[2]);
 	check_r = 1024;
